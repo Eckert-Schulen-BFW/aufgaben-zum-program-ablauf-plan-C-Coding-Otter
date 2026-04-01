@@ -17,8 +17,8 @@ Führe alle Testfälle aus und notiere die tatsächliche Ausgabe deines Programm
 | **Eingabe Gewicht** | 70 |
 | **Eingabe Größe** | 1.75 |
 | **Erwartete Kategorie** | Normalgewicht |
-| **Tatsächliche Ausgabe** | *(hier einfügen)* |
-| **✅ Bestanden?** | Ja / Nein |
+| **Tatsächliche Ausgabe** | Untergewicht |
+| **✅ Bestanden?** | Nein |
 
 ---
 
@@ -30,8 +30,8 @@ Führe alle Testfälle aus und notiere die tatsächliche Ausgabe deines Programm
 | **Eingabe Gewicht** | 50 |
 | **Eingabe Größe** | 1.70 |
 | **Erwartete Kategorie** | Untergewicht |
-| **Tatsächliche Ausgabe** | *(hier einfügen)* |
-| **✅ Bestanden?** | Ja / Nein |
+| **Tatsächliche Ausgabe** | Untergewicht |
+| **✅ Bestanden?** | Ja |
 
 ---
 
@@ -43,8 +43,8 @@ Führe alle Testfälle aus und notiere die tatsächliche Ausgabe deines Programm
 | **Eingabe Gewicht** | 95 |
 | **Eingabe Größe** | 1.75 |
 | **Erwartete Kategorie** | Übergewicht |
-| **Tatsächliche Ausgabe** | *(hier einfügen)* |
-| **✅ Bestanden?** | Ja / Nein |
+| **Tatsächliche Ausgabe** | Untergewicht |
+| **✅ Bestanden?** | Nein |
 
 ---
 
@@ -56,8 +56,8 @@ Führe alle Testfälle aus und notiere die tatsächliche Ausgabe deines Programm
 | **Eingabe Gewicht** | 120 |
 | **Eingabe Größe** | 1.75 |
 | **Erwartete Kategorie** | Starkes Übergewicht |
-| **Tatsächliche Ausgabe** | *(hier einfügen)* |
-| **✅ Bestanden?** | Ja / Nein |
+| **Tatsächliche Ausgabe** | Untergewicht |
+| **✅ Bestanden?** | Nein |
 
 ---
 
@@ -69,8 +69,8 @@ Führe alle Testfälle aus und notiere die tatsächliche Ausgabe deines Programm
 | **Eingabe Gewicht** | `abc` |
 | **Eingabe Größe** | (entfällt) |
 | **Erwartet** | Fehlermeldung, Programm endet |
-| **Tatsächliche Ausgabe** | *(hier einfügen)* |
-| **✅ Bestanden?** | Ja / Nein |
+| **Tatsächliche Ausgabe** | Fehlermeldung, Programm endet |
+| **✅ Bestanden?** | Ja |
 
 ---
 
@@ -82,8 +82,8 @@ Führe alle Testfälle aus und notiere die tatsächliche Ausgabe deines Programm
 | **Eingabe Gewicht** | 70 |
 | **Eingabe Größe** | -1 |
 | **Erwartet** | Fehlermeldung (Größe ungültig), Programm endet |
-| **Tatsächliche Ausgabe** | *(hier einfügen)* |
-| **✅ Bestanden?** | Ja / Nein |
+| **Tatsächliche Ausgabe** | Fehlermeldung (Größe ungültig), Programm endet |
+| **✅ Bestanden?** | Ja |
 
 ---
 
@@ -93,10 +93,13 @@ Führe alle Testfälle aus und notiere die tatsächliche Ausgabe deines Programm
 > Was passiert, wenn jemand `1,75` statt `1.75` als Größe eingibt? Teste es! Wie könnte man das Problem lösen?
 
 **Beobachtung beim Test:**  
-*(hier einfügen)*
+Die Frage sollte umgekehrt werden.
+Das Programm klappt mit 1,75 korrekt aber mit 1.75 nicht korrekt.
+Da der eingabe Wert 1.75 als 175 erkannt wird.
 
 **Mögliche Lösung:**  
-*(hier einfügen)*
+1. Die Eingabe zu bereinigen, indem man alle Punkte durch Kommas ersetzt vor der Umwandlung.
+2. Alternativ anstelle die Eingabe in Zentimeter annehmen und dann durch 100 teilen, um die Größe in Meter zu erhalten.
 
 ---
 
@@ -104,7 +107,8 @@ Führe alle Testfälle aus und notiere die tatsächliche Ausgabe deines Programm
 > Warum ist die Reihenfolge der `if-else-if`-Bedingungen wichtig? Was würde passieren, wenn du mit `BMI < 30` anfängst?
 
 **Antwort:**  
-*(hier einfügen)*
+Weil sonst alle Werte unter 30 als "Starkes Übergewicht" kategorisiert würden, was nicht korrekt ist. 
+Die Bedingungen müssen in der richtigen Reihenfolge geprüft werden, um die korrekte Kategorie zu bestimmen.
 
 ---
 
@@ -112,7 +116,7 @@ Führe alle Testfälle aus und notiere die tatsächliche Ausgabe deines Programm
 > Der PAP zeigt, dass `groesse > 0` **nach** TryParse geprüft wird. Warum macht diese Reihenfolge Sinn?
 
 **Antwort:**  
-*(hier einfügen)*
+Weil TryParse zuerst sicherstellt, dass die Eingabe überhaupt in eine Zahl umgewandelt werden kann.
 
 ---
 
@@ -120,11 +124,11 @@ Führe alle Testfälle aus und notiere die tatsächliche Ausgabe deines Programm
 
 | Testfall | Bestanden? |
 |----------|-----------|
-| TC-01 | ⬜ |
-| TC-02 | ⬜ |
-| TC-03 | ⬜ |
-| TC-04 | ⬜ |
-| TC-05 | ⬜ |
-| TC-06 | ⬜ |
+| TC-01 | ☐ |
+| TC-02 | ⮽ |
+| TC-03 | ☐ |
+| TC-04 | ☐ |
+| TC-05 | ⮽ |
+| TC-06 | ⮽ |
 
-**Bestandene Tests:** ___ / 6
+**Bestandene Tests:** 3 / 6
