@@ -14,7 +14,7 @@
 // Antwort: Wenn TryParse fehlschlägt (ungültige Eingabe). Dies ist der Fall bei Gewicht und Größe. Zusätzlich wird das Programm auch frühzeitig beendet, wenn die eingegebene Größe kleiner 0 ist.
 //
 // Frage 3: Warum wird TryParse statt Convert.ToDouble() verwendet?
-// Antwort: Weil ei ungültiger Eingabe (z.B. Buchstaben statt Zahlen) TryParse nicht abstürzt, sondern einfach false zurückgibt.
+// Antwort: Weil bei ungültiger Eingabe (z.B. Buchstaben statt Zahlen) TryParse nicht abstürzt, sondern einfach false zurückgibt.
 //
 // Frage 4: Welchen Datentyp sollen gewicht und groesse haben, und warum?
 // Antwort: double, weil es sich um Dezimalzahlen handelt (z.B. 70.5 kg oder 1.75 m).
@@ -36,9 +36,9 @@ WriteLine("");
 
 // ── Schritt 2: Eingabe – Name ────────────────────────────────
 // TODO: Benutzernamen einlesen (string, kein TryParse nötig)
-string Benutzername;
+string benutzername;
 Write("Bitte gib deinen Namen ein: ");
-Benutzername = ReadLine();
+benutzername = ReadLine();
 
 
 // ── Schritt 3: Eingabe – Gewicht mit Validierung ─────────────
@@ -66,7 +66,7 @@ if (!double.TryParse(eingabeGewicht, out gewicht))
 string eingabeGroesse;
 double groesse;
 groesse = -1; // Initialisierung mit ungültigem Wert, damit die Validierung funktioniert
-Console.Write("Bitte gib deine Körpergröße in Metern ein: ");
+Write("Bitte gib deine Körpergröße in Metern ein: ");
 eingabeGroesse = ReadLine();
 if (!double.TryParse(eingabeGroesse, out groesse))
 {
@@ -79,10 +79,10 @@ else if (groesse <= 0)
     return;
 }
 
-
 // ── Schritt 5: BMI berechnen ─────────────────────────────────
 // Formel: BMI = Gewicht / (Größe * Größe)
 // TODO: BMI berechnen und in einer Variablen speichern
+
 double bmi = gewicht / (groesse * groesse);
 
 // ── Schritt 6: Kategorie bestimmen ───────────────────────────
@@ -97,22 +97,22 @@ double bmi = gewicht / (groesse * groesse);
 //               obwohl laut WHO-Tabelle auch BMI >= 18.5 gelten muss?
 //  Antwort zur Denkfrage: BMI >= 18.5 muss nicht geprüft werden, weil die vorherige Bedingung (BMI < 18.5) bereits alle Werte unter 18.5 abfängt.
 
-string[] kategorie;
+string kategorie;
 if (bmi < 18.5)
 {
-    kategorie = new string[] { "Untergewicht" };
+    kategorie = "Untergewicht";
 }
 else if (bmi < 25.0)
 {
-    kategorie = new string[] { "Normalgewicht" };
+    kategorie = "Normalgewicht";
 }
 else if (bmi < 30.0)
 {
-    kategorie = new string[] { "Übergewicht" };
+    kategorie = "Übergewicht";
 }
 else
 {
-    kategorie = new string[] { "Starkes Übergewicht" };
+    kategorie = "Starkes Übergewicht";
 }
 
 
@@ -121,8 +121,8 @@ else
 // Tipp: Nutze z.B. $"{bmi:F2}" für 2 Nachkommastellen
 WriteLine("");
 WriteLine("──────────────────────────────────");
-WriteLine($"Ergebnis für {Benutzername}");
+WriteLine($"Ergebnis für {benutzername}");
 WriteLine("──────────────────────────────────");
 WriteLine($"BMI:       {bmi:F2}");
-WriteLine($"Kategorie: {kategorie[0]}");
+WriteLine($"Kategorie: {kategorie}");
 WriteLine("──────────────────────────────────");
