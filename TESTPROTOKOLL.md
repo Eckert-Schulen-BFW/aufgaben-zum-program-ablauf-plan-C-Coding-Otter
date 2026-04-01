@@ -124,11 +124,11 @@ Weil TryParse zuerst sicherstellt, dass die Eingabe überhaupt in eine Zahl umge
 
 | Testfall | Bestanden? |
 |----------|-----------|
-| TC-01 | ⬜ |
-| TC-02 | ⬜ |
-| TC-03 | ⬜ |
-| TC-04 | X |
-| TC-05 | X |
-| TC-06 | X |
+| TC-01 | ☐ |
+| TC-02 | ⮽ |
+| TC-03 | ☐ |
+| TC-04 | ☐ |
+| TC-05 | ⮽ |
+| TC-06 | ⮽ |
 
-**Bestandene Tests:** ___ / 6
+**Bestandene Tests:** 3 / 6
