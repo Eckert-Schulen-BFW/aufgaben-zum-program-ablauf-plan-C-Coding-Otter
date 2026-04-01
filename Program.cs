@@ -28,16 +28,17 @@
 // ── Schritt 1: Programmtitel ausgeben ───────────────────────
 // Tipp: Nutze Console.WriteLine() für die Titelbox.
 // TODO: Ausgabe der Titelzeile (wie im Beispiel in der README)
-Console.WriteLine("╔══════════════════════════════════╗");
-Console.WriteLine("║        BMI-Rechner v1.0          ║");
-Console.WriteLine("╚══════════════════════════════════╝");
-Console.WriteLine("");
+using static System.Console;
+WriteLine("╔══════════════════════════════════╗");
+WriteLine("║        BMI-Rechner v1.0          ║");
+WriteLine("╚══════════════════════════════════╝");
+WriteLine("");
 
 // ── Schritt 2: Eingabe – Name ────────────────────────────────
 // TODO: Benutzernamen einlesen (string, kein TryParse nötig)
 string Benutzername;
-Console.Write("Bitte gib deinen Namen ein: ");
-Benutzername = Console.ReadLine();
+Write("Bitte gib deinen Namen ein: ");
+Benutzername = ReadLine();
 
 
 // ── Schritt 3: Eingabe – Gewicht mit Validierung ─────────────
@@ -47,11 +48,11 @@ Benutzername = Console.ReadLine();
 string eingabeGewicht;
 double gewicht;
 gewicht = -1; // Initialisierung mit ungültigem Wert, damit die Validierung funktioniert
-Console.Write("Bitte gib dein Gewicht in kg ein: ");
-eingabeGewicht = Console.ReadLine();
+Write("Bitte gib dein Gewicht in kg ein: ");
+eingabeGewicht = ReadLine();
 if (!double.TryParse(eingabeGewicht, out gewicht))
 {
-    Console.WriteLine("Ungültige Eingabe für Gewicht. Bitte eine Zahl eingeben.");
+    WriteLine("Ungültige Eingabe für Gewicht. Bitte eine Zahl eingeben.");
     return;
 }
 
@@ -66,15 +67,15 @@ string eingabeGroesse;
 double groesse;
 groesse = -1; // Initialisierung mit ungültigem Wert, damit die Validierung funktioniert
 Console.Write("Bitte gib deine Körpergröße in Metern ein: ");
-eingabeGroesse = Console.ReadLine();
+eingabeGroesse = ReadLine();
 if (!double.TryParse(eingabeGroesse, out groesse))
 {
-    Console.WriteLine("Ungültige Eingabe für Körpergröße. Bitte eine Zahl eingeben.");
+    WriteLine("Ungültige Eingabe für Körpergröße. Bitte eine Zahl eingeben.");
     return;
 }
 else if (groesse <= 0)
 {
-    Console.WriteLine("Ungültige Eingabe für Körpergröße. Die Größe muss größer als 0 sein.");
+    WriteLine("Ungültige Eingabe für Körpergröße. Die Größe muss größer als 0 sein.");
     return;
 }
 
@@ -118,10 +119,10 @@ else
 // ── Schritt 7: Ergebnis ausgeben ─────────────────────────────
 // TODO: Gib Name, BMI (auf 2 Dezimalstellen) und Kategorie formatiert aus
 // Tipp: Nutze z.B. $"{bmi:F2}" für 2 Nachkommastellen
-Console.WriteLine("");
-Console.WriteLine("──────────────────────────────────");
-Console.WriteLine($"Ergebnis für {Benutzername}");
-Console.WriteLine("──────────────────────────────────");
-Console.WriteLine($"BMI:       {bmi:F2}");
-Console.WriteLine($"Kategorie: {kategorie[0]}");
-Console.WriteLine("──────────────────────────────────");
+WriteLine("");
+WriteLine("──────────────────────────────────");
+WriteLine($"Ergebnis für {Benutzername}");
+WriteLine("──────────────────────────────────");
+WriteLine($"BMI:       {bmi:F2}");
+WriteLine($"Kategorie: {kategorie[0]}");
+WriteLine("──────────────────────────────────");
