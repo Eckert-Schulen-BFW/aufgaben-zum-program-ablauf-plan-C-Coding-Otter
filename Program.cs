@@ -94,6 +94,8 @@ double bmi = gewicht / (groesse * groesse);
 //
 // 💭 Denkfrage: Warum reicht bei "Normalgewicht" die Bedingung BMI < 25.0 aus,
 //               obwohl laut WHO-Tabelle auch BMI >= 18.5 gelten muss?
+//  Antwort zur Denkfrage: BMI >= 18.5 muss nicht geprüft werden, weil die vorherige Bedingung (BMI < 18.5) bereits alle Werte unter 18.5 abfängt.
+
 string[] kategorie;
 if (bmi < 18.5)
 {
